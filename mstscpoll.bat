@@ -4,6 +4,7 @@
 if "%~1" == "" exit /b 1
 title %~1 MSTSC POLLING...
 @echo %~1 MSTSC POLLING...
+@echo Make sure firewall inbound rule 'File and Printer Sharing ^(Echo Request^)' is allowed in the remote system.
 :polling
 ping %1 -n 1 -w 1000 1>nul 2>&1 && (
     start "" /d "%windir%\system32" "%windir%\system32\mstsc.exe" /v:%1
